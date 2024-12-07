@@ -56,6 +56,12 @@
 				]
 			}
 		],
+		"parameters": {
+			"color": {
+				"type": "string",
+				"defaultValue": "red"
+			}
+		},
 		"annotations": []
 	}
 }
