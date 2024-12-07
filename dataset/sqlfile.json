@@ -5,12 +5,20 @@
 			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"ds_color": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "sql_red_file.txt",
+				"fileName": {
+					"value": "@concat('sql_',dataset().ds_color,'file.txt')",
+					"type": "Expression"
+				},
 				"folderPath": "input",
 				"fileSystem": "project"
 			},
